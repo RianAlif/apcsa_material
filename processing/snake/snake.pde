@@ -6,6 +6,7 @@
  *     Do not hit a wall
  * Specifications:
  *     The snake grows when eat food
+ 
  *     The speed increases when the snake grows
  *     Food is displayed randomly
  *     Food and parts of the snake body are squares
@@ -42,7 +43,7 @@ void setup() {
 }
 
 void draw() {
-  background(200);
+  background(#FFFFFF);
   drawSnake();
   drawFood();
   
@@ -54,17 +55,20 @@ void draw() {
 
 // draw the food item (square) which size is tha variable size
 void drawFood() {
-  // YOUR CODE HERE
+   square(food.x, food.y, size);
 }
 
 // declare a new pVector (random) for food
 void newFood() {
-  //food = new PVector......
+  int foodX = (int) random(0,1080);
+  int foodY = (int) random(0,720);
+ 
+  food = new PVector(foodX, foodY);
 }
 
 // draw snake, consider the snake array size (each square of size size) + square of the current pos
 void drawSnake() {
-  /// YOUR CODE HERE
+  square(w, h, size);
 }
 
 void updateSnake() {
